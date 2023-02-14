@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+  font-family: 'Nunito', sans-serif;
+}
+/* || Welcoming section */
+
+#welcoming-section {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
+  background-color: #333;
+}
+
+#welcoming-section h1 {
+  font-size: 8rem;
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  text-transform: capitalize;
+  letter-spacing: .25rem;
+  text-shadow: .3rem .3rem .3rem black;
+}
+
+#welcoming-section .food-icons {
+  --icons-size: 20rem;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+#welcoming-section .food-icons i {
+  position: absolute;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+  font-size: var(--icons-size);
+  color: #a79a2d;
+  text-shadow: .2rem .2rem .2rem black;
+  -webkit-transition: -webkit-transform 0.3s;
+  transition: -webkit-transform 0.3s;
+  transition: transform 0.3s;
+  transition: transform 0.3s, -webkit-transform 0.3s;
+}
+
+#welcoming-section .food-icons i.display {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transition: -webkit-transform 0.3s 0.3s;
+  transition: -webkit-transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s;
+  transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
