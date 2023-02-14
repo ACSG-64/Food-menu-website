@@ -4,18 +4,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;        
+    justify-content: space-evenly;
     background-color: #333;
-}
-
-#welcoming-section h1 {
-    font-size: 8rem;
-    color: white;
-    text-align: center;
-    font-weight: 900;
-    text-transform: capitalize;
-    letter-spacing: .25rem;
-    text-shadow: .3rem .3rem .3rem black;
+    --heading-size: 8rem;
 }
 
 #welcoming-section .food-icons {
@@ -27,15 +18,34 @@
 }
 
 #welcoming-section .food-icons i {
-    position: absolute;  
-    transform: scale(0); 
+    position: absolute;
+    transform: scale(0);
     font-size: var(--icons-size);
-    color: #a79a2d;
-    text-shadow: .2rem .2rem .2rem black;    
+    color: var(--accent-color);
+    text-shadow: .2rem .2rem .2rem black;
     transition: transform 0.3s;
 }
 
-#welcoming-section .food-icons i.display {    
-    transform: scale(1); 
+#welcoming-section .food-icons i.display {
+    transform: scale(1);
     transition: transform 0.3s 0.3s;
 }
+
+/* || Popular meals */
+#popular-foods-section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 75px 0;
+    background-color: #222;
+    --heading-size: 6rem;
+}
+
+#popular-foods-section .cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+

@@ -1,3 +1,5 @@
+/* || Global */
+
 * {
   margin: 0;
   padding: 0;
@@ -6,6 +8,123 @@
   text-decoration: none;
   outline: none;
   font-family: 'Nunito', sans-serif;
+}
+
+:root {
+  --heading-size: 8rem;
+  --accent-color: #a79a2d;
+}
+
+/* || Titles */
+
+.section-heading {
+  font-size: var(--heading-size);
+  color: white;
+  text-align: center;
+  font-weight: 900;
+  text-transform: capitalize;
+  letter-spacing: .25rem;
+  text-shadow: .3rem .3rem .3rem black;
+}
+.box-card {
+  position: relative;
+  width: 18rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  padding: 25px;
+  background-color: var(--accent-color);
+  -webkit-box-shadow: 20px 20px #000;
+  box-shadow: 20px 20px #000;
+  -webkit-transform: rotateY(20deg) skewX(-2deg);
+  transform: rotateY(20deg) skewX(-2deg);
+  -webkit-transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+  transition: -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s;
+  transition: transform 0.5s, box-shadow 0.5s, -webkit-transform 0.5s, -webkit-box-shadow 0.5s;
+}
+
+.box-card:hover {
+  -webkit-transform: rotateY(20deg) skewX(-2deg) translateY(-15px);
+  transform: rotateY(20deg) skewX(-2deg) translateY(-15px);
+  -webkit-box-shadow: 25px 45px black;
+  box-shadow: 25px 45px black;
+}
+
+.box-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -10px;
+  height: 100%;
+  width: 10px;
+  background-color: #817824;
+  -webkit-transform-origin: right;
+  transform-origin: right;
+  -webkit-transform: skewY(45deg);
+  transform: skewY(45deg);
+  -webkit-box-shadow: -0.1rem -0.1rem 0.1rem black;
+  box-shadow: -0.1rem -0.1rem 0.1rem black;
+}
+
+.box-card::after {
+  content: "";
+  position: absolute;
+  top: -10px;
+  left: 0;
+  height: 10px;
+  width: 100%;
+  background-color: #817824;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+  -webkit-transform: skewX(45deg);
+  transform: skewX(45deg);
+}
+
+.box-card .card-img {
+  width: 100%;
+}
+
+.box-card .card-name {
+  font-size: 2rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+  color: #111;
+  margin: 15px 0;
+  text-shadow: .1rem .1rem .1rem black;
+}
+
+.box-card .card-btn {
+  width: 70%;
+  padding: 5px 1px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: .1rem;
+  color: #888;
+  text-transform: capitalize;
+  background-color: #111;
+  border: none;
+  border-radius: 5rem;
+  cursor: pointer;
+  -webkit-box-shadow: .1rem .1rem .1rem black;
+  box-shadow: .1rem .1rem .1rem black;
+  -webkit-transition: color 0.3s;
+  transition: color 0.3s;
+}
+
+.box-card .card-btn:hover {
+  color: white;
 }
 /* || Welcoming section */
 
@@ -25,16 +144,7 @@
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
   background-color: #333;
-}
-
-#welcoming-section h1 {
-  font-size: 8rem;
-  color: white;
-  text-align: center;
-  font-weight: 900;
-  text-transform: capitalize;
-  letter-spacing: .25rem;
-  text-shadow: .3rem .3rem .3rem black;
+  --heading-size: 8rem;
 }
 
 #welcoming-section .food-icons {
@@ -56,7 +166,7 @@
   -webkit-transform: scale(0);
   transform: scale(0);
   font-size: var(--icons-size);
-  color: #a79a2d;
+  color: var(--accent-color);
   text-shadow: .2rem .2rem .2rem black;
   -webkit-transition: -webkit-transform 0.3s;
   transition: -webkit-transform 0.3s;
@@ -71,4 +181,34 @@
   transition: -webkit-transform 0.3s 0.3s;
   transition: transform 0.3s 0.3s;
   transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
+}
+
+/* || Popular meals */
+
+#popular-foods-section {
+  min-height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 75px 0;
+  background-color: #222;
+  --heading-size: 6rem;
+}
+
+#popular-foods-section .cards-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  justify-content: space-evenly;
 }

@@ -1,3 +1,4 @@
+/* || Global */
 * {
     margin: 0;
     padding: 0;
@@ -7,3 +8,18 @@
     font-family: 'Nunito', sans-serif;
 }
 
+:root {
+    --heading-size: 8rem;
+    --accent-color: #a79a2d;
+}
+
+/* || Titles */
+.section-heading {
+    font-size: var(--heading-size);
+    color: white;
+    text-align: center;
+    font-weight: 900;
+    text-transform: capitalize;
+    letter-spacing: .25rem;
+    text-shadow: .3rem .3rem .3rem black;
+}

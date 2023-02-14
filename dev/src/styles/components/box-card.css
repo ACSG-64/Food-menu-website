@@ -1,0 +1,77 @@
+.box-card {
+    position: relative;
+    width: 18rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+    background-color: var(--accent-color);
+    box-shadow: 20px 20px #000;
+    transform: rotateY(20deg) skewX(-2deg);
+    transition: transform 0.5s, box-shadow 0.5s;
+}
+
+.box-card:hover {
+    transform: rotateY(20deg) skewX(-2deg) translateY(-15px);    
+    box-shadow: 25px 45px black;
+}
+
+.box-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    height: 100%;
+    width: 10px;
+    background-color: #817824;
+    transform-origin: right;
+    transform: skewY(45deg);
+    box-shadow: -0.1rem -0.1rem 0.1rem black;
+}
+
+.box-card::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 0;
+    height: 10px;
+    width: 100%;
+    background-color: #817824;
+    transform-origin: bottom;
+    transform: skewX(45deg);
+}
+
+.box-card .card-img {
+    width: 100%;
+}
+
+.box-card .card-name {
+    font-size: 2rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    letter-spacing: 0.25rem;
+    color: #111;
+    margin: 15px 0;
+    text-shadow: .1rem .1rem .1rem black;
+}
+
+.box-card .card-btn {
+    width: 70%;
+    padding: 5px 1px;
+    font-size: 1.1rem;
+    font-weight: 800;
+    letter-spacing: .1rem;
+    color: #888;
+    text-transform: capitalize;
+    background-color: #111;
+    border: none;
+    border-radius: 5rem;
+    cursor: pointer;
+    box-shadow: .1rem .1rem .1rem black;
+    transition: color 0.3s;
+}
+
+.box-card .card-btn:hover {
+    color: white;
+}

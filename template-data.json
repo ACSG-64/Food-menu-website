@@ -1,0 +1,27 @@
+{
+  "index": {
+    "popular_meals": [
+      {
+        "name": "Fish",
+        "img": {
+          "src": "./src/res/images/card-img-1.png",
+          "alt": "fish"
+        }
+      },
+      {
+        "name": "Cupcake",
+        "img": {
+          "src": "./src/res/images/card-img-2.png",
+          "alt": "cupcake"
+        }
+      },
+      {
+        "name": "Lobster",
+        "img": {
+          "src": "./src/res/images/card-img-3.png",
+          "alt": "lobster"
+        }
+      }
+    ]
+  }
+}

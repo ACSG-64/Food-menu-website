@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foods</title>
+    <title>Food Menu</title>
 
     <!-- Styles -->
     <!-- INSERT CSS BUNDLE -->
@@ -20,8 +20,9 @@
 </head>
 
 <body>
+    <!-- Welcoming section -->
     <main id="welcoming-section">
-        <h1 class="secion-heading">
+        <h1 class="section-heading">
             Variety of Foods 
         </h1>
         <div class="food-icons">
@@ -36,6 +37,22 @@
             <i class="fa-solid fa-seedling"></i>
         </div>
     </main>
+
+    <!-- Popular foods section -->
+    <section id="popular-foods-section">
+        <h2 class="section-heading">
+            Popular meals
+        </h2>
+        <div class="cards-container">            
+            {% for meal in popular_meals %}
+            <div class="box-card">
+                <img src="{{ meal.img.src }}" alt="{{ meal.img.alt }}" class="card-img">
+                <h3 class="card-name">{{ meal.name }}</h3>
+                <button class="card-btn">Order now</button>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
 
     <script src="./src/scripts/script.js"></script>
 </body>
