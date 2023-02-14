@@ -11,7 +11,7 @@ const babelTask = () => tasks.babel({
     destinationFolder: './dist/src/scripts'
 });
 
-const babelCompressor = () => tasks.imgCompressor({
+const imageCompressor = () => tasks.imgCompressor({
     source: './dev/src/res/images/**/*',
     destinationFolder: './dist/src/res/images'
 })
@@ -27,6 +27,6 @@ gulp.task('serve', async () => {
 
 gulp.task('build', gulp.parallel(
     babelTask,
-    babelCompressor,
+    imageCompressor,
     pageBuilderTasks
 ));
