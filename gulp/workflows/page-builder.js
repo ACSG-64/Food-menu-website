@@ -3,7 +3,7 @@ const path = require('path');
 const fs = require('fs');
 const { cssBundler, cssInserter, nunjucksCompiler } = require('../tasks/index');
 
-module.exports = (template_data) => {
+module.exports = (template_data_file) => {
     const taskSeries = [];
 
     const files = fs.readdirSync(path.join(__dirname, '..', '..', 'dev'));
@@ -15,11 +15,14 @@ module.exports = (template_data) => {
         const cssBundleFile = `${templateName}.css`;
 
         taskSeries.push(gulp.series(
-            () => nunjucksCompiler({
-                source: `./dev/${templateFile}`,
-                templateData: { ...(template_data[templateName] ?? {}) },
-                destinationFolder: './dist',
-            }),
+            () => {
+                const templateData = JSON.parse(fs.readFileSync(template_data_file)) ?? {};
+                return nunjucksCompiler({
+                    source: `./dev/${templateFile}`,
+                    templateData: { ...(templateData[templateName] ?? {}) },
+                    destinationFolder: './dist',
+                });
+            },
             () => cssBundler({
                 cssSource: './dev/src/styles/**/*.css',
                 htmlSource: compiledTemplateSrc,
@@ -33,6 +36,6 @@ module.exports = (template_data) => {
             })
         ));
     }
-    
+
     return taskSeries;
 }
