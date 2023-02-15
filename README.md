@@ -1,6 +1,6 @@
 # Food menu website
 
-A fictiional food menu website developed using various CSS techniques and vanilla JavaScript to create an interactive website with moderately advanced visual effects without losing usability.
+A fictional food menu website developed using various CSS techniques and vanilla JavaScript to apply moderately advanced visual effects without losing usability.
 
 ## Technologies
 * Template engine: Nunjucks 
