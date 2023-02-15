@@ -1,6 +1,6 @@
 {
   "index": {
-    "popular_meals": [
+    "popular_dishes": [
       {
         "name": "Fish",
         "img": {
@@ -21,6 +21,56 @@
           "src": "./src/res/images/card-img-3.png",
           "alt": "lobster"
         }
+      }
+    ],
+    "full_menu": [
+      {
+        "name": "Pancakes",
+        "img": {
+          "src": "./src/res/images/gallery-img-1.jpg",
+          "alt": "Pancakes"
+        },
+        "description": ""
+      },
+      {
+        "name": "Cupcakes",
+        "img": {
+          "src": "./src/res/images/gallery-img-2.jpg",
+          "alt": "cupcakes"
+        },
+        "description": ""
+      },
+      {
+        "name": "Hummus",
+        "img": {
+          "src": "./src/res/images/gallery-img-3.jpg",
+          "alt": "hummus"
+        },
+        "description": ""
+      },
+      {
+        "name": "Hamburger",
+        "img": {
+          "src": "./src/res/images/gallery-img-4.jpg",
+          "alt": "hamburger"
+        },
+        "description": ""
+      },
+      {
+        "name": "Salmon",
+        "img": {
+          "src": "./src/res/images/gallery-img-5.jpg",
+          "alt": "salmon"
+        },
+        "description": ""
+      },
+      {
+        "name": "Vegetables",
+        "img": {
+          "src": "./src/res/images/gallery-img-6.jpg",
+          "alt": "vegetables"
+        },
+        "description": ""
       }
     ]
   }

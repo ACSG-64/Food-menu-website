@@ -126,6 +126,125 @@
 .box-card .card-btn:hover {
   color: white;
 }
+.card-w-desc {
+  position: relative;
+  color: white;
+  -webkit-box-shadow: 3px 3px 1px #e92929,
+        5px 5px 1px #a2e946,
+        7px 7px 1px #297ce9,
+        9px 9px 1px #e92999;
+  box-shadow: 3px 3px 1px #e92929,
+        5px 5px 1px #a2e946,
+        7px 7px 1px #297ce9,
+        9px 9px 1px #e92999;
+  --title-top-pos: 10px;
+  --content-left-pos: 15px;
+  --title-size: 1.25rem;
+  -webkit-transition: -webkit-box-shadow 0.5s;
+  transition: -webkit-box-shadow 0.5s;
+  transition: box-shadow 0.5s;
+  transition: box-shadow 0.5s, -webkit-box-shadow 0.5s;
+}
+
+.card-w-desc:hover {
+  -webkit-box-shadow: 8px 8px 1px #e92929,
+        18px 18px 1px #a2e946,
+        28px 28px 1px #297ce9,
+        38px 38px 1px #e92999;
+  box-shadow: 8px 8px 1px #e92929,
+        18px 18px 1px #a2e946,
+        28px 28px 1px #297ce9,
+        38px 38px 1px #e92999;
+}
+
+.card-w-desc::before {
+  content: "";
+  position: absolute;
+  z-index: 10;
+  top: var(--title-top-pos);
+  left: 80%;
+  height: 0;
+  width: 2px;
+  background-color: white;
+  -webkit-transition: height 0.5s;
+  transition: height 0.5s;
+}
+
+.card-w-desc:hover::before {
+  height: 90%;
+}
+
+.card-w-desc::after {
+  content: "";
+  position: absolute;
+  top: calc(var(--title-top-pos) + (var(--title-size) * 2));
+  left: var(--content-left-pos);
+  height: 2px;
+  width: 0;
+  background-color: white;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.card-w-desc:hover::after {
+  width: 90%;
+}
+
+.card-w-desc .card-img {
+  height: 15vw;
+  width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -webkit-transition: -webkit-filter 0.5s;
+  transition: -webkit-filter 0.5s;
+  transition: filter 0.5s;
+  transition: filter 0.5s, -webkit-filter 0.5s;
+}
+
+.card-w-desc:hover .card-img {
+  -webkit-filter: blur(4px) brightness(60%);
+  filter: blur(4px) brightness(60%);
+}
+
+.card-w-desc .card-name {
+  position: absolute;
+  top: var(--title-top-pos);
+  left: var(--content-left-pos);
+  font-size: var(--title-size);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  width: 0;
+  overflow: hidden;
+  -webkit-transition: width 0.5s;
+  transition: width 0.5s;
+}
+
+.card-w-desc:hover .card-name {
+  width: 100%;
+  -webkit-transition: width 1s 0.25s;
+  transition: width 1s 0.25s;
+}
+
+.card-w-desc .card-description {
+  position: absolute;
+  bottom: var(--title-top-pos);
+  left: var(--content-left-pos);
+  width: 70%;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: opacity .5s;
+  transition: opacity .5s;
+}
+
+.card-w-desc:hover .card-description {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transition: opacity 1s 0.25s;
+  transition: opacity 1s 0.25s;
+}
 /* || Welcoming section */
 
 #welcoming-section {
@@ -183,7 +302,7 @@
   transition: transform 0.3s 0.3s, -webkit-transform 0.3s 0.3s;
 }
 
-/* || Popular meals */
+/* || Popular dishes */
 
 #popular-foods-section {
   min-height: 100vh;
@@ -211,4 +330,20 @@
   -webkit-box-pack: space-evenly;
   -ms-flex-pack: space-evenly;
   justify-content: space-evenly;
+}
+
+/* || All dishes */
+
+#all-dishes {
+  background-color: #333;
+  padding: 50px 75px;
+  --heading-size: 6rem;
+}
+
+#all-dishes .gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(max(300px, 100% / 4), 1fr));
+  grid-auto-rows: 1fr;
+  gap: 5vw;
+  margin-top: 25px;
 }

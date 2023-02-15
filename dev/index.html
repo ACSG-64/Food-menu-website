@@ -23,7 +23,7 @@
     <!-- Welcoming section -->
     <main id="welcoming-section">
         <h1 class="section-heading">
-            Variety of Foods 
+            Variety of Dishes
         </h1>
         <div class="food-icons">
             <i class="fa-solid fa-egg display"></i>
@@ -38,13 +38,13 @@
         </div>
     </main>
 
-    <!-- Popular foods section -->
+    <!-- Popular dishes section -->
     <section id="popular-foods-section">
         <h2 class="section-heading">
-            Popular meals
+            Popular dishes
         </h2>
-        <div class="cards-container">            
-            {% for meal in popular_meals %}
+        <div class="cards-container">
+            {% for meal in popular_dishes %}
             <div class="box-card">
                 <img src="{{ meal.img.src }}" alt="{{ meal.img.alt }}" class="card-img">
                 <h3 class="card-name">{{ meal.name }}</h3>
@@ -52,6 +52,26 @@
             </div>
             {% endfor %}
         </div>
+    </section>
+
+    <!-- All dishes section -->
+    <section id="all-dishes">
+        <h2 class="section-heading">
+            Our dishes
+        </h2>
+        <div class="gallery">
+            {% for meal in full_menu %}
+            <a href="#" class="card-w-desc">
+                <img src="{{ meal.img.src }}" alt="{{ meal.img.alt }}" class="card-img">
+                <h3 class="card-name">{{ meal.name }}</h3>
+                <p class="card-description">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum pharetra
+                    augue at porttitor.
+                </p>
+            </a>
+            {% endfor %}
+        </div>
+
     </section>
 
     <script src="./src/scripts/script.js"></script>
